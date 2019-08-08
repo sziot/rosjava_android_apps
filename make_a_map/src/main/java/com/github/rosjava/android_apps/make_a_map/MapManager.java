@@ -36,9 +36,9 @@ public class MapManager extends AbstractNodeMain {
     private StatusCallback statusCallback;
 
     public interface StatusCallback {
-        public void timeoutCallback();
-        public void onSuccessCallback(SaveMapResponse arg0);
-        public void onFailureCallback(Exception e);
+        void timeoutCallback();
+        void onSuccessCallback(SaveMapResponse arg0);
+        void onFailureCallback(Exception e);
     }
     public void registerCallback(StatusCallback statusCallback) {
         this.statusCallback = statusCallback;

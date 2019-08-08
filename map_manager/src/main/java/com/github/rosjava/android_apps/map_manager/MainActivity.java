@@ -113,10 +113,10 @@ public class MainActivity extends RosAppActivity {
 		WindowManager windowManager = getWindowManager();
 		final Display display = windowManager.getDefaultDisplay();
 
-		mapListView = (ListView) findViewById(R.id.map_list);
-		mapView = (VisualizationView) findViewById(R.id.map_view);
-		backButton = (Button) findViewById(R.id.back_button);
-		renameButton = (Button) findViewById(R.id.rename_button);
+		mapListView = findViewById(R.id.map_list);
+		mapView = findViewById(R.id.map_view);
+		backButton = findViewById(R.id.back_button);
+		renameButton = findViewById(R.id.rename_button);
         cameraControlLayer = new CameraControlLayer();
         mapView.onCreate(Lists.<Layer>newArrayList(cameraControlLayer));
 
@@ -446,7 +446,7 @@ public class MainActivity extends RosAppActivity {
 			dialog.setTitle("Rename Map");
 
 			final String targetMapId = mapList.get(targetPosition).getMapId();
-			final EditText nameField = (EditText) dialog
+			final EditText nameField = dialog
 					.findViewById(R.id.name_editor);
 			nameField.setText(mapList.get(targetPosition).getName());
 			nameField.setOnKeyListener(new View.OnKeyListener() {
@@ -506,7 +506,7 @@ public class MainActivity extends RosAppActivity {
 				}
 			});
 
-			button = (Button) dialog.findViewById(R.id.cancel_button);
+			button = dialog.findViewById(R.id.cancel_button);
 			button.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {

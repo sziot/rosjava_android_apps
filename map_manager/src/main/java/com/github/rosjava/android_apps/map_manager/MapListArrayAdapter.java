@@ -50,15 +50,15 @@ public class MapListArrayAdapter extends ArrayAdapter<MapListData> {
 					Context.LAYOUT_INFLATER_SERVICE);
 			convertView = inflator.inflate(R.layout.map_list_item, null);
 			viewHolder = new ViewHolder();
-			viewHolder.textView = (TextView) convertView
+			viewHolder.textView = convertView
 					.findViewById(R.id.map_list_text);
-			viewHolder.radioButton = (RadioButton) convertView
+			viewHolder.radioButton = convertView
 					.findViewById(R.id.map_list_button);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-		final MapListData mapListData = (MapListData) getItem(position);
+		final MapListData mapListData = getItem(position);
 		viewHolder.textView.setText(mapListData.getText());
 		viewHolder.radioButton.setChecked(mapListData.isChecked());
 		viewHolder.radioButton.setOnClickListener(new OnClickListener() {

@@ -4,15 +4,11 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
+        applicationId "com.github.rosjava.android_apps.teleop.kinetic"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 2
         versionName "1.0.0"
-    }
-    productFlavors {
-        kinetic {
-            applicationId "com.github.rosjava.android_apps.teleop.kinetic"
-        }
     }
     lintOptions {
         abortOnError = false

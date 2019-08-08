@@ -96,13 +96,13 @@ public class MainActivity extends RosAppActivity {
 		setMainWindowResource(R.layout.main);
 		super.onCreate(savedInstanceState);
 
-		cameraView = (RosImageView<sensor_msgs.CompressedImage>) findViewById(R.id.image);
+		cameraView = findViewById(R.id.image);
 		cameraView.setMessageType(sensor_msgs.CompressedImage._TYPE);
 		cameraView.setMessageToBitmapCallable(new BitmapFromCompressedImage());
-		virtualJoystickView = (VirtualJoystickView) findViewById(R.id.virtual_joystick);
-		backButton = (Button) findViewById(R.id.back_button);
-		chooseMapButton = (Button) findViewById(R.id.choose_map_button);
-        mapView = (VisualizationView) findViewById(R.id.map_view);
+		virtualJoystickView = findViewById(R.id.virtual_joystick);
+		backButton = findViewById(R.id.back_button);
+		chooseMapButton = findViewById(R.id.choose_map_button);
+        mapView = findViewById(R.id.map_view);
         mapView.onCreate(Lists.<Layer>newArrayList());
 
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -119,8 +119,8 @@ public class MainActivity extends RosAppActivity {
 		});
 
 		mapView.getCamera().jumpToFrame((String) params.get("map_frame", getString(R.string.map_frame)));
-		mainLayout = (ViewGroup) findViewById(R.id.main_layout);
-		sideLayout = (ViewGroup) findViewById(R.id.side_layout);
+		mainLayout = findViewById(R.id.main_layout);
+		sideLayout = findViewById(R.id.side_layout);
 
 	}
 

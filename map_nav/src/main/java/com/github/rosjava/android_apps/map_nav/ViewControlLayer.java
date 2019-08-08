@@ -59,7 +59,8 @@ public class ViewControlLayer extends CameraControlLayer {
 
     private enum ViewMode {
         CAMERA, MAP
-    };
+    }
+
     private ViewMode viewMode;
 
 

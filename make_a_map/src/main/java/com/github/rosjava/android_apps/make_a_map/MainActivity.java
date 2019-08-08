@@ -102,15 +102,15 @@ public class MainActivity extends RosAppActivity {
 
 		super.onCreate(savedInstanceState);
 
-		cameraView = (RosImageView<sensor_msgs.CompressedImage>) findViewById(R.id.image);
+		cameraView = findViewById(R.id.image);
 		cameraView.setMessageType(sensor_msgs.CompressedImage._TYPE);
 		cameraView.setMessageToBitmapCallable(new BitmapFromCompressedImage());
-		virtualJoystickView = (VirtualJoystickView) findViewById(R.id.virtual_joystick);
-		refreshButton = (ImageButton) findViewById(R.id.refresh_button);
-		saveButton = (ImageButton) findViewById(R.id.save_map);
-		backButton = (Button) findViewById(R.id.back_button);
+		virtualJoystickView = findViewById(R.id.virtual_joystick);
+		refreshButton = findViewById(R.id.refresh_button);
+		saveButton = findViewById(R.id.save_map);
+		backButton = findViewById(R.id.back_button);
 
-        mapView = (VisualizationView) findViewById(R.id.map_view);
+        mapView = findViewById(R.id.map_view);
         mapView.onCreate(Lists.<Layer>newArrayList());
 
         refreshButton.setOnClickListener(new View.OnClickListener() {
@@ -141,8 +141,8 @@ public class MainActivity extends RosAppActivity {
 
         mapView.getCamera().jumpToFrame((String) params.get("map_frame", getString(R.string.map_frame)));
 
-		mainLayout = (ViewGroup) findViewById(R.id.main_layout);
-		sideLayout = (ViewGroup) findViewById(R.id.side_layout);
+		mainLayout = findViewById(R.id.main_layout);
+		sideLayout = findViewById(R.id.side_layout);
 	}
 
 	@Override
@@ -155,7 +155,7 @@ public class MainActivity extends RosAppActivity {
 			dialog = new Dialog(this);
 			dialog.setContentView(R.layout.name_map_dialog);
 			dialog.setTitle("Save Map");
-			final EditText nameField = (EditText) dialog
+			final EditText nameField = dialog
 					.findViewById(R.id.name_editor);
 
 			nameField.setOnKeyListener(new View.OnKeyListener() {
@@ -205,7 +205,7 @@ public class MainActivity extends RosAppActivity {
 					}
 				}
 			});
-			button = (Button) dialog.findViewById(R.id.cancel_button);
+			button = dialog.findViewById(R.id.cancel_button);
 			button.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
