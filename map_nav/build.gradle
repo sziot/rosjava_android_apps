@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 3
+        versionName "1.0.0"
+    }
+    productFlavors {
+        kinetic {
+            applicationId "com.github.rosjava.android_apps.map_nav.kinetic"
+        }
+    }
+    lintOptions {
+        abortOnError = false
+    }
+}
+
+dependencies {
+    implementation 'com.github.rosjava.android_remocons:common_tools:0.3.0'
+    implementation 'org.ros.android_core:android_core_components:0.4.0'
+    implementation 'org.ros.rosjava_core:rosjava_geometry:0.3.6'
+    implementation 'org.ros.rosjava_messages:map_store:0.3.1'
+    implementation 'org.ros.rosjava_messages:move_base_msgs:1.12.7'
+    implementation 'org.ros.rosjava_messages:world_canvas_msgs:0.2.0'
+    implementation 'org.ros.rosjava_messages:geometry_msgs:1.12.7'
+    implementation 'org.ros.rosjava_messages:actionlib_msgs:1.12.7'
+    implementation 'org.ros.rosjava_messages:std_msgs:0.5.11'
+}
+
